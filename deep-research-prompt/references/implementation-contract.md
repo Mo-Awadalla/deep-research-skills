@@ -1,126 +1,37 @@
-# Implementation Contract
+# Authoring an implementation research contract
 
-Use this branch when research must become an executable technical specification for a coding agent.
+Use when research must produce an actionable technical specification. Merge the implementation overlay into the full research handoff. Research execution does not authorize implementation, deployment, purchases, or external communications.
 
-## Current-system contract
+## Establish the current system
 
-Inspect the repository when accessible and record:
+Inspect accessible code, manifests, lockfiles, schemas, runtime and test configuration. Record relevant paths, observed behavior, invariants, constraints, and failures. Separate user-provided descriptions from observations; surface conflicts. Package sufficient snapshots or excerpts for an external researcher, minimizing private information.
 
-- relevant file paths, modules, function signatures, schemas, APIs, jobs, and data stores;
-- runtime, dependency, deployment, and test configuration;
-- current behavior and known failure modes;
-- constraints that must remain invariant;
-- conflicts between user-provided descriptions and observed code.
+## Define required decisions
 
-Do not ask the implementation agent to rediscover supplied context. Do require a short freshness check before editing.
+For material choices, require a supported recommendation, rationale, alternatives, and conditions that would change it. Ties, insufficient evidence, and “none feasible” are valid evidence reporting; they block a criterion demanding an implementation-ready choice until resolved or explicitly changed by the user.
 
-## Target contract
+Existing techniques and straightforward adoption are acceptable. Do not require invention or cross-domain analogies. New proposals need comparison with a real baseline, actual differences and assumptions, and a disconfirming test.
 
-Specify the target with concrete interfaces:
+## Make interfaces concrete
 
-- Pydantic, TypeScript, JSON Schema, SQL DDL, API schemas, or function signatures;
-- closed vocabularies/enums when the domain is closed;
-- input/output examples and error behavior;
-- data migrations and backward-compatibility requirements;
-- observability and operational requirements.
+Specify applicable input/output schemas, error behavior, compatibility, observability, and migration invariants. Include representative examples. When research must decide a schema, state the decision gate rather than inventing the interface in advance.
 
-If a schema cannot responsibly be fixed before research, define the invariants and the decision gate that will fix it.
+Inspect pinned dependencies first and verify proposed changes against authoritative source or release information. Distinguish installed and proposed versions. Record compatibility and migration constraints. Avoid stale model identifiers and unverified API parameters.
 
-## Decisions: default and escape hatch
+## Define reproducible evaluation
 
-For each consequential choice, name:
+Before experiments, state workload/data, baseline, metric, failure criterion, and environment. Separate published, observed, calculated, expected, and target values. Provide commands only when their interfaces have been checked. Unrun tests are proposed tests; missing execution capability means a blocked experiment or explicitly requested protocol, never a fabricated result.
 
-- **Default:** what the implementation should use.
-- **Rationale:** evidence and constraints supporting it.
-- **Escape hatch:** one alternative triggered by a measurable condition.
+Sequence implementation recommendations by dependency. Each step names components, prerequisites, completion assertions, failure detection, and rollback or containment. Estimates remain labeled estimates. Include relevant boundaries, partial failures, migrations, dependency changes, resource use, privacy, and observability; avoid unrelated technology checklists.
 
-Do not request an option dump. Comparison is useful only when it resolves to a default or a decision gate.
+## Apply the shared research cycles
 
-Apply this pattern to storage, retrieval, chunking, models, reranking, planner architecture, thresholds, evaluation, deployment, and migration.
+Use the same configurable five complete cycles. Emphases can be current-system coverage, alternatives, dependency/source verification, benchmark and rollout feasibility, and final adversarial review. Each includes full research, independent audit, and evidence-backed repair. All scheduled cycles must complete, and the final independently reviewed revision must pass every acceptance requirement before recommending the specification for implementation. Earlier findings can carry forward into later cycles.
 
-## Dependencies and versions
+Subagents can investigate independent branches inside a phase. They do not count as additional completed provider phases, and summaries do not replace checking code, sources, or outputs. Missing repository access, unpublished measurements, or incompatible capabilities keep affected requirements blocked.
 
-Version rules must be time-aware:
+## Select deliverables
 
-1. Inspect repository lockfiles/manifests first.
-2. Verify proposed versions against official registries or release documentation on the research date.
-3. Prefer compatibility with the existing stack over arbitrary newest versions.
-4. Pin exact versions for reproducible builds when the ecosystem supports it.
-5. Record why an upgrade is required and any migration risk.
+Choose artifacts needed for the change: current-system map, target interfaces, decision record, compatibility table, evaluation plan, failure analysis, roadmap, migration/rollback plan, and unresolved gates. Map requirements to acceptance IDs and audit evidence. Never enable machine checks the prose does not request.
 
-Never invent a version or write `latest`/`TBD` in the final contract.
-
-## Evaluation-first roadmap
-
-The roadmap begins with the smallest evaluation harness that can distinguish improvement from regression. Each step includes:
-
-- files/components affected;
-- prerequisites;
-- size (S/M/L) and engineer-day estimate as an estimate;
-- implementation action;
-- test/eval assertion that proves completion;
-- rollback or containment path;
-- known risks.
-
-Sequence by dependency, not presentation order. Parallelize only independent work.
-
-## Failure-mode audit
-
-Create a table:
-
-| Failure mode | Trigger | Detection | Mitigation | Verification |
-|---|---|---|---|---|
-
-Include data-quality failures, boundary inputs, stale caches/indexes, partial migrations, dependency/API changes, latency/cost regressions, security/privacy, observability blind spots, and rollback failure.
-
-## Performance claims
-
-Separate:
-
-- **Measured:** reproduced in the stated environment.
-- **Published:** reported by a cited external source.
-- **Expected:** reasoned estimate not yet measured.
-- **Target:** acceptance threshold chosen for the project.
-
-Never label an unrun test `PASS`. Provide commands or test names for claims that can be reproduced.
-
-## Required deliverables
-
-A strong implementation contract normally includes:
-
-1. current-system map;
-2. target architecture and schemas;
-3. decision record with defaults and escape hatches;
-4. dependency/version table;
-5. sequenced roadmap;
-6. eval plan and acceptance thresholds;
-7. failure-mode audit;
-8. migration, rollout, and rollback plan;
-9. unresolved decisions with owners or gates;
-10. **synthesis artifact (SKILL.md §3b, S2 applies to most implementation work):** for design/invention elements, a prior-work check (closest existing approach, named with a verifiable source, plus the actual difference from the proposal) and a contribution record per derived design claim — Contribution / Prior work / Basis / Consequence / Test / Status, each with a falsifying observation.
-
-## Acceptance-test examples
-
-- `AT-01`: Every target interface has a concrete schema or a named decision gate.
-- `AT-02`: Every architectural decision has one default and one measurable escape condition.
-- `AT-03`: Every proposed dependency version was verified against an official source.
-- `AT-04`: Every roadmap step has a test/eval assertion and rollback path.
-- `AT-05`: No expected or target metric is described as measured.
-- `AT-06`: Current-system claims name the observed file/config source or are labeled user-provided.
-- `AT-07`: Derived design claims carry the contribution record with a falsification condition.
-- `AT-08`: Prior-work check performed: closest existing approach named with a verifiable source and the actual difference stated, or the check recorded as a limitation.
-
-Machine-readable contract markers may include:
-
-```yaml
-acceptance:
-  min_external_urls: 8
-  min_h2_sections: 7
-  min_tables: 4
-  min_candidates: 0
-  forbidden_placeholders: true
-  require_references_heading: true
-  require_synthesis_artifact: true
-  require_contribution_record: true
-  require_prior_work_check: true
-```
+For example, a routine library migration needs observed usages, compatibility evidence, a change sequence, meaningful regression checks, and rollback. It does not automatically need eight URLs, a novel architecture, or contribution records.

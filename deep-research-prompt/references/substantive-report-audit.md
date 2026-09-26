@@ -1,108 +1,40 @@
-# Substantive Report Audit
+# Substantive report audit
 
-Use this after deterministic structure/link checks when a research deliverable includes a plan, protocol, recommendation, forecast, budget, schedule, nutrition target, or other executable prescription.
+Use in every audit phase and for the final candidate revision. The deterministic validator checks the declared record; this audit assesses whether the evidence and report actually justify it. A script result cannot replace source review.
 
-## Why this exists
+## Reviewer inputs and independence
 
-A report can satisfy section counts and contain real-looking citations while remaining unusable. Common failure modes include pseudo-citations, unsupported precision, contradictory prescriptions, and a phase map that does not reconcile with the executable tables.
+Receive the frozen contract, exact candidate revision, evidence registry, previous findings, and declared attachments in a reviewer context separate from the research/repair context. Check that inputs exist and correspond to the revision named. A changed report, evidence basis, or acceptance scope invalidates affected prior findings and audit conclusions.
 
-## Audit sequence
+Independence means a separate assignment and context with fresh checks. It does not mean the same provider has become an independent evidentiary source. Withhold earlier conclusions during an initial counterevidence search where feasible, then compare with the full report. Record actual context and source overlap honestly.
 
-### 1. Plain-language extraction
+## Review the whole contract
 
-Before judging polish, restate the report as:
+1. Restate the answer and proposed action in plain language. Check audience, scope, constraints, exclusions, and whether every agreed question is addressed.
+2. Check each acceptance ID against its specified output and verification method. Record observed evidence for each result, not a blanket assertion of quality.
+3. Reopen every decision-driving citation. Verify identity, relevant passages/data, date, applicability, and exact support. Prioritize high-impact claims first; unavailable necessary support remains unresolved. Additional sampling can inspect lower-impact claims but cannot stand in for required coverage.
+4. Investigate counterevidence, competing explanations, missing alternatives, shared-source dependence, and possibly contaminated material. Check that credible disagreement was considered rather than discarded.
+5. Recompute consequential numbers and inspect units, denominators, uncertainty, assumptions, and distinctions between measured and forecast outcomes.
+6. Reconcile narrative, tables, recommendations, summaries, and evidence. For executable plans, compare every schedule, phase, fallback, and adjustment against one canonical prescription.
+7. Test operational feasibility: available inputs, capabilities, resources, timing, measurement access, error handling, and applicable domain constraints. Missing capability is a blocker rather than a claimed result.
+8. Review new or changed content introduced by repairs and check for regressions elsewhere in the report.
 
-- what the reader is being told to do;
-- when and how often;
-- what inputs or targets apply;
-- what triggers an adjustment;
-- what the expected outcome is.
+## Findings and repair
 
-If the operational prescription cannot be summarized without guessing, the report is incomplete.
+Each substantive finding names its ID, affected criterion/claim, exact issue, source or reproducible observation, decision impact, and required correction or investigation. A reviewer may report no material defect. Do not manufacture findings to justify a scheduled cycle.
 
-### 2. Citation integrity
+The repair phase must accept and fix a finding, reject it with evidence, or retain it unresolved. Record the change and resulting revision. Rejection is not resolution without an evidence-backed explanation. Do not quietly delete contrary sources, soften a requirement, or change the problem to pass.
 
-Fail the report when it uses unresolved markers such as `[cite: 12]`, orphaned footnote numbers, named studies absent from the references, or bibliography entries that cannot be mapped to claims.
+Independently verify substantive repairs at the resulting revision. A subsequent scheduled audit can perform this check. An explicitly unchanged repair may reuse an independent audit of the identical report, evidence, and contract. A substantive final repair requires another independent audit before approval.
 
-For 3–5 load-bearing claims, verify:
+## Disposition
 
-- source identity, date, and venue;
-- study population and intervention;
-- outcome actually measured;
-- whether the source supports the exact claim;
-- whether a mechanistic, acute, EMG, or surrogate outcome is being misrepresented as longitudinal evidence.
+Use one vocabulary throughout the packet:
 
-A valid URL is not proof of claim support.
+- `PASS`: the requested research cycles are complete, the current revision has adequate independent audit coverage, every required acceptance criterion passes, and no material finding remains unresolved. Disclosed uncertainty may remain only where the original contract allows it.
+- `REPAIR_REQUIRED`: concrete defects or unmet requirements remain and meaningful repair is available. The artifact is unapproved. Continue research, repair, and re-audit.
+- `BLOCKED`: required evidence, input, access, or capability prevents meaningful progress. The artifact is unapproved. State attempted routes, exact missing condition, decision impact, and what enables resumption.
 
-### 3. Cross-section coherence
+Completing five cycles cannot turn unresolved failures into `PASS`. Early acceptance cannot skip the remaining requested cycles. Handoff readiness is separate: it checks whether the packet is ready for research to begin, not whether that research has occurred.
 
-Build a small consistency matrix for every major prescription:
-
-| Item | Narrative recommendation | Phase/timeline value | Executable table value | Final summary value | Consistent? |
-|---|---|---|---|---|---|
-
-Check especially:
-
-- weekly volume versus session-level totals;
-- stated effort/intensity versus programmed RIR or failure;
-- maintenance versus deficit/surplus language;
-- calendar dates versus week count;
-- primary plan versus fallback plan;
-- planned deloads versus adjustment rules;
-- stated caps versus later peak values.
-
-Any mismatch must be reconciled, not merely mentioned.
-
-### 4. Arithmetic and unit reconciliation
-
-Recompute all decision-driving arithmetic with tools:
-
-- macros to calories;
-- percentages and body-weight thresholds;
-- weekly set totals, including the stated fractional-set convention;
-- date ranges and week counts;
-- estimated expenditure versus prescribed intake;
-- daily versus weekly redistribution.
-
-Flag values that are mathematically correct but semantically mislabeled—for example, calling an intake “maintenance” when it is below the report’s own expenditure estimate.
-
-### 5. Operational completeness
-
-For each phase, confirm that the executable plan explains exactly how to reach its prescribed values. A table saying volume rises from 10 to 20 sets fails if the daily program remains fixed and no set-addition/removal map exists.
-
-Every adjustment rule needs:
-
-- metric;
-- measurement method;
-- observation window;
-- threshold;
-- action;
-- reassessment window;
-- safeguard against reacting to ordinary noise.
-
-### 6. Precision and feasibility
-
-Challenge exact forecasts, biological targets, and thresholds. Require either direct individualized data or calibrated uncertainty. Reject unsupported promises of precise regional tissue gain, fat loss, risk reduction, or structural change.
-
-Check whether requested measurements are realistically accessible. If a report requires ultrasound, laboratory imaging, proprietary software, or clinician-only testing, it must also provide a practical fallback.
-
-### 7. Domain and safety calibration
-
-Do not let cautious language substitute for evidence. For health, exercise, nutrition, legal, financial, or other consequential advice:
-
-- distinguish general population evidence from evidence for the user’s condition;
-- avoid diagnosing from self-report;
-- avoid categorical safety claims for an exercise, product, or intervention;
-- avoid calling any loaded movement “zero load,” “zero compression,” or inherently safe without support;
-- provide symptom- or event-based escalation criteria without fearmongering;
-- ensure substitutions solve the stated constraint rather than merely moving it elsewhere.
-
-### 8. Final disposition
-
-Use one of three outcomes:
-
-- **PASS:** citations, arithmetic, internal consistency, and operational mapping hold.
-- **PASS WITH REPAIRS:** core recommendation is defensible but named corrections are required before execution.
-- **FAIL:** unsupported citations, contradictions, missing operational mapping, unsafe certainty, or fabricated precision undermine the deliverable.
-
-When explaining a failed report to the user, lead with a plain-language summary of what it says, then separate useful core ideas from defects. Do not make the reader parse the report’s jargon to understand the verdict.
+Only recommend an approved report for its contracted use. For an unapproved artifact, provide the defect/blocker report without endorsing its recommendations. Preserve useful evidence for subsequent repair.

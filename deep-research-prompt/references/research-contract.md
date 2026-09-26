@@ -1,133 +1,59 @@
-# Research Contract
+# Authoring a research contract
 
-Use this branch for reports, investigations, literature reviews, due diligence, comparisons, and decision support.
+This is authoring guidance. Expand applicable requirements into the exported handoff; its recipient must not need this repository.
 
-## Required contract design
+## Define success before research
 
-### Mission
+Record the audience, central question, decision or understanding sought, scope, exclusions, research cutoff, and constraints. Define terms that could change the answer. Inspect supplied material before asking for missing facts. For individualized recommendations, establish baseline, current practice, resources, constraints, and material risk signals in one intake bundle.
 
-State:
+Do a focused feasibility scan: identify credible source classes and concrete starting points, existing work, ambiguous terminology, inaccessible inputs, and needed capabilities. This makes the contract executable without duplicating the downstream investigation.
 
-- the decision or understanding the research supports;
-- the intended audience;
-- the required deliverable;
-- what a successful result enables the audience to do.
+Write observable acceptance criteria with stable IDs. Each names the required output and verification method. Distinguish deterministic checks from evidence judgments. A causal-support requirement needs a source/method audit, not a link count. Choose quantities only when the question requires them, such as comparing every user-supplied candidate.
 
-Central questions should be answerable. Avoid generic verbs such as “explore” unless discovery itself is the objective.
+## Require useful outputs
 
-### Scope
+Typical outputs are a direct answer, evidence-backed findings, comparison or calculation where relevant, uncertainty and contradictions, recommendations when warranted, and a claim/source ledger. The architecture follows the reader's decision; avoid obligatory essay sections and minimum prose lengths.
 
-Name inclusions and exclusions, timeframe, geography, population/market/system boundary, and 3–7 terms whose meaning changes the result. Record a research cutoff date for current topics.
+Synthesis may confirm existing practice, identify a conditional rule, expose an unresolved decision, or reject every candidate. Original hypotheses are optional. If proposing one, identify evidence and assumptions, closest verifiable prior work when claiming novelty, its consequence for the decision, and a disconfirming observation or test. Do not manufacture controversy to fill a section.
 
-An initial hypothesis is optional. If used, label it as a proposition to test and require active search for disconfirming evidence so it does not become an anchor.
+An unresolved issue can be reported honestly without satisfying a requirement that depends on resolving it. Whether an inconclusive answer satisfies a question must be established in the original contract. Never redefine a decisive evidence gap as success during repair.
 
-### Coverage contract
+## Specify the complete schedule
 
-Define required questions and artifacts, not a universal sequence. Examples:
+Default to five complete research–audit–repair cycles, three separate full research calls per cycle. These are fifteen scheduled calls plus necessary re-audits. Keep `n` configurable and count cycles separately from calls and attempts.
 
-- compare named alternatives across mandatory dimensions;
-- produce at least N candidates with fields A–M;
-- identify consensus, disputes, gaps, and decision implications;
-- calculate specified metrics with units and formulas;
-- include a recommendation only if the evidence supports one.
+Use emphases of coverage, alternatives, source integrity, methods/feasibility, and final challenge. For another `n`, choose explicit emphases appropriate to the question; every cycle covers the whole contract. Additional cycles require distinct useful audit targets, not invented issues.
 
-### Research policy
+Each phase records inputs, candidate revision, findings, evidence changes, and outputs. Complete all cycles even if an earlier version passes. A prompt, failed call, or superficial rewrite is not a completed full research phase. Audit contexts are separate from research/repair contexts; repeated model agreement is not evidence independence.
 
-Choose an effort tier and planning mode. Specify authoritative databases and private corpora when relevant. Allow the agent to change its plan within scope when evidence warrants it.
+Independently check substantive repairs at the resulting revision; later scheduled audits can do this. An unchanged final revision can retain an existing independent audit. Continue targeted repair/re-audit after the schedule for acceptance failures. If unavailable evidence or capabilities prevent meaningful progress, return unapproved `BLOCKED` with the condition for resuming. Attempt count never grants approval.
 
-For broad research, divide independent branches by question, source class, geography, timeframe, or competing hypothesis—not by arbitrary section count. Every branch needs a distinct objective and return contract.
+## Export one usable packet
 
-### Stopping rule
+Include the complete mission and evidence contract, acceptance mapping, phase prompts, run order, and attachment instructions. Essential shared text can appear once in the packet, but the operator must paste or attach it into every new call.
 
-Use an observable rule, for example:
+Name initial attachments and confirm availability. Label future reports, ledgers, and audits as generated dependencies; do not claim they already exist. Before each call, check its required inputs. Preserve the original contract version alongside approved changes.
 
-> Stop when every core question is answered by the strongest reasonably available evidence; load-bearing claims have independent support or are labeled single-source; contradictions are reconciled or explicitly unresolved; required counts and fields are complete; and another search pass is producing mostly duplicate evidence.
+Define needed capabilities, such as source retrieval or code execution, without assuming a provider supports them. Verify actual support before promising execution; missing capabilities block affected phases.
 
-A fixed source count may be a floor, never proof of adequacy.
+## Adapt to the subject
 
-### Synthesis mode (select one per contract; see SKILL.md §3b)
+- Literature: specify databases, inclusion/exclusion criteria, study designs, outcomes, search dates, and applicability. A systematic review may outrank an individual study for a broad effect claim.
+- Markets: define geography, segment, comparison basis, currency/base year, and company-reported versus independently estimated values.
+- Policy: distinguish enacted, effective, proposed, interpreted, and jurisdiction-specific claims.
+- History: separate contemporary records, later scholarship, retrospective testimony, and provenance gaps.
+- Technical questions: inspect code or official documentation, versions, workloads, and benchmark methods. Separate published claims from reproduced results.
+- Source-poor questions: broaden terminology and adjacent work, record search/access limits, and keep consequential unsupported conclusions unapproved.
+- Executable plans: use one canonical prescription; reconcile schedules, tables, fallbacks, summaries, and arithmetic. Adjustment rules need measurement, observation window, trigger, action, and reassessment.
 
-The contract must encode the mode in the objective, workflow, required outputs, and acceptance checks — not as an appended insights section.
+Practitioner sources are optional in every adaptation. Relevant anecdotes can guide investigation; uncorroborated generalizations cannot become established findings. Disagreement alone is not contamination.
 
-- **S1 contradiction-driven (default):** require the report to, after establishing the evidence base, identify consequential contradictions, unexplained observations, or untested assumptions; check comparability before treating findings as contradictory; generate competing explanations and derive distinguishing predictions; for each candidate record supporting evidence, contrary evidence, added assumptions, the closest existing explanation, and a falsifying observation; select the strongest survivor and state what decision or research direction it changes.
-- **S2 cross-domain invention:** for design questions — abstract the bottleneck, search structurally similar problems in other fields, generate materially different designs with the mapping and its limits specified, run a mandatory prior-work check (existing implementation under other terminology = established practice, not invention), and develop the strongest survivor into an implementable spec with baseline, expected advantage, failure conditions, and validation plan. Separate the generation pass from an adversarial review pass that hunts prior work and simpler-baseline wins.
-- **S3 experiment-driven:** only when execution with real tools/data is in scope (never brief-only handoff); primary product is a reproducible analysis/prototype/derivation; define baseline, metric, and failure criterion before examining results; never describe an unexecuted test as a result. Without executable tools, the honest deliverable is an executable protocol.
+## Example acceptance decisions
 
-All modes: every derived claim carries the contribution record (Contribution / Prior work / Basis / Consequence / Test / Status). Novelty and usefulness are reported as reader-grading definitions, not agent self-scores: novelty = stated distance from the named closest prior work; usefulness = the concrete decision/action the report changes (the Consequence field). The Prior-work entry names a verifiable source (URL/DOI/evidence ID) for the closest existing idea; claiming "none exists" requires a stated search and is labeled an inference.
+- Each agreed question has a supported answer; questions explicitly permitting inconclusive results have a documented search boundary and decision impact.
+- Material calculations include traceable inputs, formulas, units, and reproduced results.
+- Recommendations map to findings and sources; credible contrary evidence is addressed.
+- Initial attachments are supplied, and phase prompts declare their generated dependencies.
+- All cycles are complete, material findings are resolved with evidence, and the final revision has independent audit coverage.
 
-### Output architecture
-
-Specify what the reader needs, not a default academic essay. Common components:
-
-- executive answer;
-- scope and method;
-- findings organized around the decision questions;
-- comparison/evidence tables;
-- contradictions and uncertainty;
-- recommendations or decision options;
-- limitations;
-- references and optional evidence ledger.
-
-Length follows information density. Do not request “the more the better.”
-
-## Research-type adaptations
-
-### Literature review
-
-Require search databases, query date, inclusion/exclusion criteria, study-quality distinctions, review type, and a study table. Do not treat preprints, observational studies, and controlled trials as equivalent.
-
-### Market or competitive landscape
-
-Define market boundary, customer segment, geography, currency/base year, and comparison dimensions. Separate company-reported numbers from independently measured estimates. Reconcile incompatible market-size definitions.
-
-### Current policy or regulation
-
-Prioritize statutes, regulations, court opinions, regulator guidance, and official notices. Record effective dates and jurisdiction. Distinguish enacted rules from proposals and commentary.
-
-### Historical investigation
-
-Separate contemporary primary records, later scholarship, and retrospective claims. Surface provenance gaps and disputes; do not turn absence of evidence into evidence of absence.
-
-### Technical due diligence
-
-Prioritize official documentation, source code, changelogs, benchmarks with disclosed methodology, and reproducible tests. Record versions and environment. Separate vendor claims from observed performance.
-
-### Source-poor topics
-
-Do not manufacture certainty. Broaden terminology and adjacent literatures, report the search boundary, and explicitly state what could not be established.
-
-### Individualized executable plans
-
-Start with an intake gate: baseline/current practice, constraints, resources, availability, tolerances or risk signals, and the user’s actual objective. Missing consequential inputs require one bundled question or a clearly provisional output; do not manufacture personalization.
-
-Use one canonical prescription as the source of truth. Require every phase map, fallback, summary, budget/volume ledger, and adjustment rule to reconcile to it. Every adjustment rule needs a metric, method, observation window, threshold, action, reassessment window, and noise safeguard.
-
-For consequential domains, reject pseudo-citations, unsupported biological or behavioral precision, categorical safety claims, and inaccessible measurements without practical alternatives. Require a substantive disposition before execution.
-
-## Acceptance-test examples
-
-Write binary checks tied to the request:
-
-- `AT-01`: Every central question has a direct answer or an `Unresolved` label with explanation.
-- `AT-02`: At least 12 candidates are present and each contains all eight required fields.
-- `AT-03`: Every material quantitative claim includes a nearby citation and unit/timeframe.
-- `AT-04`: Each recommendation maps to at least one finding and one cited evidence item.
-- `AT-05`: Contradictory estimates are displayed together and reconciled or left explicitly unresolved.
-- `AT-06`: A derived contribution is present and falsifiable: reader can name the proposition, the closest prior work, and a refuting observation.
-- `AT-07`: Prior-work check recorded: closest existing method/idea named and the actual difference stated, or the check recorded as a limitation.
-- `AT-08`: Report contains the synthesis artifact required by the selected mode; a standalone "Original Insights" section does not satisfy it.
-
-For machine checking, include markers in the contract:
-
-```yaml
-acceptance:
-  min_external_urls: 12
-  min_h2_sections: 6
-  min_tables: 2
-  min_candidates: 0
-  forbidden_placeholders: true
-  require_references_heading: true
-  require_synthesis_artifact: true
-  require_contribution_record: true
-  require_prior_work_check: true
-```
+The main skill links the canonical schema and handoff template. Derive prose and machine acceptance entries from the same requirement list.

@@ -1,29 +1,28 @@
-<!-- AUTHOR ONLY: Populate every authoring field and remove this comment. Keep the export self-contained. Default cycles=5; update every count if the user specifies another n. For implementation work merge its authoring overlay before export. -->
-# Research handoff: [specific topic]
+# Research handoff: Offline CSV parser documentation decision
 
 ## Mission and frozen contract
 
-**Audience:** [decision-maker and relevant prior knowledge].
+**Audience:** A developer choosing a parser for a small browser-based CSV import screen; familiar with JavaScript but not these two fictional libraries.
 
-**Decision:** [what the reader needs to decide or understand].
+**Decision:** Whether the supplied PineCSV or MapleCSV documentation establishes a suitable default for the import requirements, or whether a missing guarantee prevents a choice.
 
-**Successful output:** [concrete report, comparison, protocol, or specification and what it enables].
+**Successful output:** A concise documented capability comparison, a conditional recommendation or explicit no-winner verdict, and an unexecuted verification plan for claims that documentation cannot establish.
 
-**Scope:** [included subjects, population/system/geography, timeframe, research cutoff, and exclusions].
+**Scope:** Only the three embedded source fixtures DOC-A v1, DOC-B v1, and WORKLOAD v1. Evaluate the versions as supplied; no web search, package installation, actual implementation, or claim about a real library. The fixtures have no external currency date.
 
-**Definitions:** [terms that materially change the answer].
+**Definitions:** A documented capability is an explicit statement in a fixture. An observed capability requires an executed test and is unavailable in this task. A recommendation may be conditional; absence from documentation means not established, not unsupported behavior proved.
 
-**Known inputs and constraints:** [verified user facts, existing materials, explicit assumptions, and resource/access boundaries]. Do not invent missing personal or system facts. Consequential missing inputs block the dependent prescription until supplied or until the contract explicitly permits a provisional answer.
+**Known inputs and constraints:** WORKLOAD defines the complete fictional input requirements. DOC-A and DOC-B are synthetic documentation written solely for this example. They are the only authorized evidence. No credentials, external services, or compute are needed; do not present the fixtures as real products. Do not invent missing personal or system facts. Consequential missing inputs block the dependent prescription until supplied or until the contract explicitly permits a provisional answer.
 
 **Questions:**
 
-1. [specific answerable question]
-2. [specific answerable question]
-3. [specific answerable question]
+1. Which WORKLOAD requirements does each documented parser explicitly support, contradict, or leave unestablished?
+2. Do any documentation ambiguities or internal conflicts change the justified choice?
+3. What conditional default or no-winner decision follows, and which unexecuted tests would be needed before implementation?
 
-**Required artifacts:** [exact requested artifacts and necessary fields; avoid arbitrary source, section, table, or novelty quotas]. Produce useful synthesis, including a conditional recommendation or an explicit unknown when evidence warrants it. Established practice and no useful new contribution are valid outcomes.
+**Required artifacts:** A comparison covering every W1–W5 requirement with parser, support verdict, fixture locator, and limitation; a decision with its decisive evidence; and a proposed test for every required W1–W5 behavior that remains unestablished. Supply claim/evidence/support records, finding resolutions, and actual run accounting. Produce useful synthesis, including a conditional recommendation or an explicit unknown when evidence warrants it. Established practice and no useful new contribution are valid outcomes.
 
-**Optional hypothesis/experiment work:** [omit unless useful to the decision; specify the actual product and available data/tools]. Separate a proposed protocol from an executed result. Never describe an unrun experiment as evidence. A novelty claim requires a sourced comparison with the closest existing work; novelty is not an acceptance condition unless explicitly requested.
+**Experiment boundary:** Return test protocols only. Neither fictional package implementation is supplied, so no behavior, benchmark, memory result, or test execution may be claimed. No original invention or novelty comparison is required.
 
 ## Evidence and output rules
 
@@ -40,10 +39,10 @@
 
 These criteria apply to the full researched output. Keep their IDs stable across all calls. Record explicit authorized scope or test changes in a new contract version; never weaken a criterion merely to obtain a pass. Save an immutable copy of this handoff as the governing contract. Verify researched reports against that external contract, not only against acceptance text inside the report. This handoff may supply its own contract copy when checking packet readiness; readiness does not approve research. Changing the eventual artifact kind from handoff to report does not relax the governing criteria or cycle count.
 
-- **AT-01 — Coverage:** [each named question and mandatory artifact has a complete answer, or a specifically permitted unknown with decision impact].
+- **AT-01 — Coverage:** Answer all three questions and compare both parsers against every W1–W5 requirement; unknown documented support is explicitly allowed if its decision impact is stated.
 - **AT-02 — Evidence:** material claims have sources with exact support and truthful access/provenance; unsupported consequential claims are narrowed, removed, or explicitly unknown without an unsupported recommendation.
-- **AT-03 — Coherence:** [topic-specific consistency and arithmetic checks; name the actual quantities or interfaces to reconcile].
-- **AT-04 — Decision usefulness:** [the concrete actionable or explanatory outcome, including allowed conditional/no-winner outcomes].
+- **AT-03 — Coherence:** Every table verdict agrees with its fixture locator and final recommendation; never convert the documented 4 MiB limit into a tested performance claim, conflate record rejection with whole-file rejection, or claim an unexecuted test passed.
+- **AT-04 — Decision usefulness:** Provide a conditional default or no-winner verdict, name the decisive supported requirements and blocking unknowns, and give an unexecuted distinguishing test for every required W1–W5 behavior that remains unestablished.
 - **AT-05 — Independent review:** every material finding is resolved with evidence and independently verified on the latest substantive revision. Cycle completion is checked separately by the run manifest.
 
 ```yaml
@@ -60,9 +59,9 @@ acceptance:
 
 Before a call, verify the recipient can open its required materials and perform the requested operations. Use available suitable tools; do not assume a provider, model, connector, local pathname, code runner, or background mode exists. If a needed operation is unavailable, report the blocker or produce a protocol only when the contract permits it. Offline work may inspect supplied evidence; never invent web retrieval.
 
-**Required capabilities:** [operations needed by this specific contract].
+**Required capabilities:** Read this full Markdown packet and its embedded fixtures, preserve claim/source locators and versions, and produce separate research, audit, repair, and re-audit artifacts in fresh contexts. No web, code runner, external filesystem, or particular provider is required.
 
-**Initial materials:** [name, version, purpose, access method, and required/optional status for each supplied attachment, or explicitly None]. Confirm actual access at execution. Optional inaccessible materials get a limitation; mandatory missing evidence blocks its dependent conclusion or stage.
+**Initial materials:** DOC-A v1 and DOC-B v1 are required documentation fixtures; WORKLOAD v1 is the required decision input. All three are embedded at the end of this file and accessible by heading and numbered locator. There are no optional initial attachments. Confirm actual access at execution. Optional inaccessible materials get a limitation; mandatory missing evidence blocks its dependent conclusion or stage.
 
 The following are future-generated artifacts. They need not exist when this handoff is authored. The coordinator supplies the listed versions before each dependent call.
 
@@ -175,27 +174,68 @@ research_state:
     reaudits: []
     attestations: []
   handoff:
-    objective: "[same concrete decision stated above]"
+    objective: "Choose a justified documented default between two fictional CSV parsers, or explain why the source packet cannot establish a winner"
     questions:
-      - "[first required question]"
-      - "[remaining required questions, one per entry]"
+      - "Compare both parsers against W1–W5 with exact fixture support"
+      - "Resolve material documentation ambiguity and state the conditional decision plus unexecuted verification plan"
     constraints:
-      - "[scope and material constraint, one per entry]"
+      - "Use only embedded DOC-A v1, DOC-B v1, and WORKLOAD v1; no web, code execution, package installation, or invented empirical results"
     expected_artifacts:
-      - "[concrete final artifact]"
+      - "A documented capability comparison, conditional default or no-winner verdict, and unexecuted tests for every required W1–W5 behavior that remains unestablished"
       - "Evidence ledger, finding resolutions, revision-specific verification, actual run manifest"
     capabilities:
-      - "[operation the recipient must verify is available]"
+      - "Read embedded fixtures and produce versioned artifacts in independent reviewer contexts"
     acceptance_criteria: [AT-01, AT-02, AT-03, AT-04, AT-05]
     controller: "The complete Cycle controller section in this file governs five separate research-audit-repair cycles, actual stage dispatch, counting, review and blockers."
     stage_prompts:
       research: "Use the full Prompt: research stage section in this file."
       audit: "Use the full Prompt: independent audit stage section in this file; use Prompt: independent re-audit stage for repaired revisions."
       repair: "Use the full Prompt: repair stage section in this file."
-    attachments: []
+    attachments:
+      - id: DOC-A
+        status: embedded
+        description: "Required PineCSV synthetic documentation fixture v1, embedded under DOC-A v1 in this file"
+      - id: DOC-B
+        status: embedded
+        description: "Required MapleCSV synthetic documentation fixture v1, embedded under DOC-B v1 in this file"
+      - id: WORKLOAD
+        status: embedded
+        description: "Required fictional requirements v1, embedded under WORKLOAD v1 in this file"
     future_dependencies:
       - "Candidate reports and evidence states returned by actual research calls"
       - "Revision-specific independent audits and finding registers before repair"
       - "Repaired candidates and version/evidence deltas before independent re-audit"
     continuation: "Use this file's stage prompts and attachment mapping. Execute all five research-audit-repair cycles, independently audit substantive repairs, and return unapproved BLOCKED if unavailable evidence prevents repair."
 ```
+
+## Embedded source packet — synthetic example, not external evidence
+
+The material below is deliberately fictional documentation for testing this handoff's portability. Its statements are source inputs, not researched conclusions. Use `attachment_id: DOC-A`, `attachment_id: DOC-B`, or `attachment_id: WORKLOAD` in future evidence records and exact A/B/W locators in support edges. Do not invent public URLs or treat a fixture as independent confirmation of itself.
+
+### DOC-A v1 — PineCSV documentation fixture
+
+- **A1. Interface:** `parse(text, options)` returns `{rows, errors}`; `rows` is an array of string arrays. The parser consumes the complete input string.
+- **A2. Quoting:** Quoted fields may contain commas. A doubled quote inside a quoted field represents one literal quote. Line breaks inside quoted fields are supported.
+- **A3. Headers:** With `header: true`, the first record names object keys. Duplicate headers keep the rightmost value. The duplicate is not added to `errors`.
+- **A4. Limits and validation:** Inputs above 4 MiB are rejected before parsing. Rows with a different field count are omitted and added to `errors`; accepted rows are still returned.
+- **A5. Environment:** The package is documented as a browser-compatible JavaScript module. The fixture provides no accessibility, throughput, memory, or security measurements.
+
+### DOC-B v1 — MapleCSV documentation fixture
+
+- **B1. Interface:** `parse(text, options)` returns `{records, diagnostics}`; `records` is an array of string arrays. The parser consumes the complete input string.
+- **B2. Quoting:** Quoted fields may contain commas and doubled quotes. The grammar in this fixture does not specify whether quoted fields may contain line breaks.
+- **B3. Headers:** `validateHeaders: true` rejects duplicate header names and returns a diagnostic without records.
+- **B4. Error mode:** With `strict: true`, a record with a different field count rejects the entire input and returns a diagnostic without records. Without that option, malformed records are skipped.
+- **B5. Environment and limit:** The package is documented as a browser-compatible JavaScript module. No input size limit, performance measurement, or security measurement is stated in the fixture.
+
+### WORKLOAD v1 — fictional product requirements
+
+- **W1. Environment:** Import CSV text in a browser. The application rejects files larger than 2 MiB before calling the parser.
+- **W2. Quoting:** Accept commas, doubled quotes, and line breaks inside quoted fields.
+- **W3. Headers:** Duplicate column names must produce a user-visible error and no imported records. A wrapper may add validation if the documentation provides enough information to specify it, but this must be labeled proposed and untested.
+- **W4. Atomic import:** A malformed field count must produce a user-visible error and no imported records. Silently importing only valid rows is unacceptable; an explicit application-level check before committing records may be proposed and labeled untested.
+- **W5. Decision boundary:** Prefer an established documented fit with a small explicit wrapper over invented behavior. If a required behavior remains unestablished, a conditional recommendation or no-winner result is acceptable. Do not assume speed, memory, security, or runtime behavior from documentation alone.
+
+## Execution status of this example
+
+This example supplies a complete prompt packet and fictional source inputs only. No research provider calls, source adjudications, implementation tests, or independent acceptance audits have been executed. The five-cycle workflow is scheduled, not completed. Structural handoff readiness does not establish a parser recommendation.
